@@ -6,13 +6,13 @@ function mudaTexto(lugar, texto){
 
 function mensagemInicial(){
     mudaTexto('h1', 'Adivinhe o numero secreto');
-    mudaTexto('p', 'Escolha um número entre 1 a 10');
+    mudaTexto('p', 'Escolha um número entre 1 a 100');
 }
 
 let numeroCorreto = numeroAleatorio();
 
 function numeroAleatorio(){
-    return parseInt(Math.random()*10 + 1);
+    return parseInt(Math.random()*100 + 1);
 }
 let tentativas = 5;
 
