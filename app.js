@@ -30,6 +30,7 @@ function reiniciaJogo(){
     limpaCampo();
     mensagemInicial();
     document.getElementById('botaoChutar').removeAttribute('disabled',true);
+    document.getElementById('reiniciar').setAttribute('disabled', true);
 }
 
 
