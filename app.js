@@ -29,6 +29,7 @@ function reiniciaJogo(){
     mudaTexto('.numeroTentativas', tentativas);
     limpaCampo();
     mensagemInicial();
+    numeroCorreto = numeroAleatorio();
     document.getElementById('botaoChutar').removeAttribute('disabled',true);
     document.getElementById('reiniciar').setAttribute('disabled', true);
 }
