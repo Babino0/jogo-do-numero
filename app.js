@@ -1,4 +1,6 @@
 
+let tentativas = 5;
+let numeroCorreto = 3;
 function mudaTexto(lugar, texto){
     let titulo = document.querySelector(lugar);
     titulo.innerHTML = texto;
@@ -9,40 +11,36 @@ function mensagemInicial(){
     mudaTexto('p', 'Escolha um número entre 1 a 100');
 }
 
-let numeroCorreto = numeroAleatorio();
 
 function numeroAleatorio(){
     return parseInt(Math.random()*100 + 1);
 }
-let tentativas = 5;
 
 function limpaCampo(){
     resposta = document.querySelector('input');
     resposta.value = "";
 }
-    /*function desabilitaChute() {
+function desabilitarChute() {
         document.getElementById('botaoChutar').setAttribute('disabled',true);
 
-    }*/
-    function reiniciaJogo(){
-        tentativas = 5;
-        mudaTexto('.numeroTentativas', tentativas);
-        limpaCampo();
-        mensagemInicial();
-        
     }
+function reiniciaJogo(){
+    tentativas = 5;
+    mudaTexto('.numeroTentativas', tentativas);
+    limpaCampo();
+    mensagemInicial();
+    document.getElementById('botaoChutar').removeAttribute('disabled',true);
+}
+
 
 function verificaResposta() {
     let resposta = document.querySelector('input').value;
     //ganha
     if (numeroCorreto == resposta) {
-
     mudaTexto('h1','Parabéns!!');
-
     mudaTexto('p','Você só pode ser um genio!!');
-
     document.getElementById('reiniciar').removeAttribute('disabled');
-    
+    desabilitarChute()
 }else{
         tentativas--
         mudaTexto('.numeroTentativas', tentativas);
@@ -58,9 +56,8 @@ function verificaResposta() {
         if(tentativas  == 0 ){
         mudaTexto('h1', 'PERDEU :(');
         document.getElementById('reiniciar').removeAttribute('disabled');
-        return tentativas = 5 ;
-        
-        
+        desabilitarChute();
+        return tentativas = 6 ;
     }
     }
 }
