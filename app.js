@@ -1,6 +1,6 @@
 
 let tentativas = 5;
-let numeroCorreto = 3;
+let numeroCorreto = numeroAleatorio();
 function mudaTexto(lugar, texto){
     let titulo = document.querySelector(lugar);
     titulo.innerHTML = texto;
